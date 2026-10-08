@@ -1,0 +1,16 @@
+{
+  "name": "thoropass",
+  "owner": { "name": "Thoropass", "url": "https://thoropass.com" },
+  "metadata": {
+    "description": "Thoropass plugins for Claude"
+  },
+  "plugins": [
+    {
+      "name": "thoropass-compliance",
+      "source": "./plugins/thoropass-compliance",
+      "description": "Understand Thoropass audits, track your tasks and readiness, triage evidence requests, answer policy questions, match policies to evidence, and investigate monitors.",
+      "category": "compliance",
+      "license": "MIT"
+    }
+  ]
+}

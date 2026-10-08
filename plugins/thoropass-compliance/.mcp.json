@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "thoropass": {
+      "type": "http",
+      "url": "https://api.thoropass.com/mcp"
+    }
+  }
+}
