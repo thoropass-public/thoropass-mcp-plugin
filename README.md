@@ -62,7 +62,6 @@ Validate locally before opening a PR (CI runs the same commands):
 ```
 claude plugin validate --strict .
 claude plugin validate --strict plugins/thoropass-compliance
-claude plugin validate --strict plugins/thoropass-compliance/skills
 ```
 
 ## License

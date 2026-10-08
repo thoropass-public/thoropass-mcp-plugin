@@ -19,5 +19,3 @@ jobs:
         run: claude plugin validate --strict .
       - name: Validate plugin
         run: claude plugin validate --strict plugins/thoropass-compliance
-      - name: Validate skills
-        run: claude plugin validate --strict plugins/thoropass-compliance/skills

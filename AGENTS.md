@@ -120,5 +120,4 @@ Claude users get these as skills; other agents can follow the same steps from `p
   ```bash
   claude plugin validate --strict .
   claude plugin validate --strict plugins/thoropass-compliance
-  claude plugin validate --strict plugins/thoropass-compliance/skills
   ```
