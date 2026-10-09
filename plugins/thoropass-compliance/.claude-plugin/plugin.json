@@ -2,9 +2,20 @@
   "name": "thoropass-compliance",
   "version": "0.2.0",
   "description": "Work with Thoropass audits, evidence requests, requirements, controls, policies, and monitors: explain where an audit stands, build a personal to-do list, show readiness by framework criteria, triage evidence, report audit status, answer policy questions, match policies to evidence requests, and investigate failing monitors.",
-  "author": { "name": "Thoropass", "url": "https://thoropass.com" },
+  "author": {
+    "name": "Thoropass",
+    "url": "https://thoropass.com"
+  },
   "homepage": "https://github.com/thoropass-public/thoropass-mcp-plugin",
   "repository": "https://github.com/thoropass-public/thoropass-mcp-plugin",
   "license": "MIT",
-  "keywords": ["thoropass", "compliance", "soc2", "audit", "evidence", "mcp"]
+  "privacyPolicyUrl": "https://www.thoropass.com/privacy-policy",
+  "keywords": [
+    "thoropass",
+    "compliance",
+    "soc2",
+    "audit",
+    "evidence",
+    "mcp"
+  ]
 }

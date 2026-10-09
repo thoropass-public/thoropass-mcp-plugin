@@ -63,6 +63,10 @@ Not using Claude? [AGENTS.md](AGENTS.md) explains the Thoropass MCP server to an
 
 The plugin treats Thoropass content as data, not instructions. Actions that change data (submitting evidence requests, attaching policies, posting or deleting comments) always require your explicit confirmation.
 
+## Privacy
+
+The plugin connects to the Thoropass MCP server at `https://api.thoropass.com/mcp`. Data you access through it is handled under the [Thoropass Privacy Policy](https://www.thoropass.com/privacy-policy).
+
 ## License
 
 [MIT](LICENSE)
