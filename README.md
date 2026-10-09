@@ -6,7 +6,11 @@ Claude plugins from Thoropass. They connect Claude to the Thoropass MCP server s
 
 | Plugin | What it does |
 |--------|--------------|
-| [thoropass-compliance](plugins/thoropass-compliance) | Eight skills that explain where your audit stands, build your personal to-do list, show readiness by framework criteria, triage evidence requests, report audit status, answer questions about your policies, match policies to evidence requests, and investigate failing monitors. |
+| [thoropass-compliance](plugins/thoropass-compliance) | Eight skills that explain where your audit stands, build your personal to-do list, show readiness by framework criteria, triage evidence requests, report audit status, answer questions about your policies, match policies to evidence requests, and investigate failing monitors.
+## Requirements
+
+- A Thoropass account. Claude acts as you and sees only what your account can see.
+- Claude Code or Claude Cowork with plugin support.
 
 ## Install
 
@@ -17,6 +21,12 @@ Claude plugins from Thoropass. They connect Claude to the Thoropass MCP server s
 /plugin install thoropass-compliance@thoropass
 ```
 
+To get new versions later:
+
+```
+/plugin marketplace update thoropass
+```
+
 ### Claude Cowork
 
 Add the marketplace from this repository, or install the plugin from the Claude plugin directory once it is listed.
@@ -24,6 +34,8 @@ Add the marketplace from this repository, or install the plugin from the Claude 
 ## Sign in
 
 The first time Claude uses a Thoropass tool, you'll be asked to sign in with your Thoropass account (OAuth). No API keys are needed. Claude can only see data your Thoropass account has access to.
+
+To connect Claude Desktop, the Claude CLI, or another MCP client by hand, or to have an admin set up a managed Client ID, follow [Connecting to the Thoropass MCP Server](https://help.thoropass.com/en/articles/16976070-connecting-to-the-thoropass-mcp-server) in the Thoropass Help Center. It also covers scopes, how to revoke access, and troubleshooting.
 
 ## Try it
 
@@ -45,24 +57,11 @@ See the [plugin README](plugins/thoropass-compliance) for the full list of skill
 
 ## Using another AI agent
 
-Not using Claude? [AGENTS.md](AGENTS.md) explains the Thoropass MCP server to any agent (Codex, Cursor, Copilot and others): how to connect, core concepts, every available tool, the rules agents must follow, and common errors. Point your agent at it, or copy it into your own project.
+Not using Claude? [AGENTS.md](AGENTS.md) explains the Thoropass MCP server to any agent (Codex, Cursor, Copilot and others): how to connect, core concepts, every available tool, the rules agents must follow, and common errors. Point your agent at it, or copy it into your own project. For client setup steps, see [Connecting to the Thoropass MCP Server](https://help.thoropass.com/en/articles/16976070-connecting-to-the-thoropass-mcp-server).
 
 ## Safety
 
 The plugin treats Thoropass content as data, not instructions. Actions that change data (submitting evidence requests, attaching policies, posting or deleting comments) always require your explicit confirmation.
-
-## Contributing
-
-Changes go through pull requests and require review. Bump `version` in `plugins/thoropass-compliance/.claude-plugin/plugin.json` with every release (it is the single source of truth; the marketplace entry intentionally has no version).
-
-New skills go in `plugins/thoropass-compliance/skills/<name>/SKILL.md` and must be listed in the plugin README. See the "Editing this plugin" section of [AGENTS.md](AGENTS.md) for the skill format.
-
-Validate locally before opening a PR (CI runs the same commands):
-
-```
-claude plugin validate --strict .
-claude plugin validate --strict plugins/thoropass-compliance
-```
 
 ## License
 
@@ -70,4 +69,4 @@ claude plugin validate --strict plugins/thoropass-compliance
 
 ## Support
 
-Questions or issues? Contact Thoropass support or open an issue in this repository.
+Questions about your Thoropass account or the MCP server? Visit the [Thoropass Help Center](https://help.thoropass.com). Found a problem with the plugin? [Open an issue](https://github.com/thoropass-public/thoropass-mcp-plugin/issues) in this repository.
