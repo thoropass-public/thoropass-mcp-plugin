@@ -33,6 +33,12 @@ Skills run when your request matches, or directly by name (for example `/thoropa
 | `policy-evidence-matcher` | Matches published policies to open policy evidence requests | Attaches a policy only after you approve it |
 | `monitor-investigation` | Which monitors are failing, why, and how to fix them | No |
 
+### Controls
+
+| Skill | Description | Writes data? |
+|---|---|---|
+| `control-review` | Which controls need attention, who owns them, and the detail of each one, with or without an audit | Sets an owner, edits notes or attaches a file only after you approve it |
+
 ## Example workflows
 
 ### Getting oriented
