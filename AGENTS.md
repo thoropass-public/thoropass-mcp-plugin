@@ -32,7 +32,7 @@ get_connection_context ─► list_audits ─► audit_id
 audit_id ─► get_audit / get_audit_progress / get_audit_scope
 audit_id ─► list_evidence_requests ─► er_id ─► get_evidence_request, comments, attachments, activity
 audit_id ─► list_requirements   (requirements + their ERs, criteria and controls in one call)
-audit_id ─► list_global_controls (controls + health, owner, monitors, linked ERs)
+list_global_controls ─► global_control_id ─► get_global_control / list_global_control_files / update_global_control / add_global_control_file   (no audit needed; audit_id narrows to that audit and adds linked ERs)
 list_policies ─► policy_id ─► get_policy_content / attach_policy_to_evidence_request
 list_monitors ─► monitor_id ─► list_monitor_results
 list_users ─► user ids for @-mentions in comments
@@ -51,7 +51,9 @@ If the organization has more than one active audit, ask the user which one befor
 | `get_audit_progress` | ER counts, % complete, overdue/due-soon, returned by auditor, pace (`at_risk`), stalled ERs, comments awaiting a customer reply, per-assignee breakdown. |
 | `get_audit_scope` | Systems in scope for the whole audit. |
 | `list_requirements` | All requirements for an audit with ERs, criteria and controls. Filters: `status`, `citation`, `framework`. |
-| `list_global_controls` | Controls for an audit with health, owner, frameworks, monitors and linked ERs. Requires `audit_id`. |
+| `list_global_controls` | The organization's controls with health, owner, frameworks, linked audits and monitors. No `audit_id` needed; pass it to keep that audit's frameworks and include linked ERs. Search by name or reference ID; filters: `owner`, `implementation_status`, `framework` (comma-separated). |
+| `get_global_control` | One control in full: notes, custom flag, family, per-framework child controls, policies, monitors and linked audits. |
+| `list_global_control_files` | Files attached to a control (the Control Files tab). |
 | `list_evidence_requests` | ERs. Filters: `audit`, `status`, `er_type`, `assignee`; search by name or display id. |
 | `get_evidence_request` | One ER with requirements, attachments, sections and linked audits. |
 | `get_evidence_request_activity` | Timeline of status changes, attachments and comments on an ER. |
@@ -75,6 +77,8 @@ If the organization has more than one active audit, ask the user which one befor
 | `add_attachment_from_url` | Server downloads a public or presigned HTTPS URL (no logins, no redirects, max 75MB). |
 | `delete_evidence_request_attachment` | Removes a customer attachment. |
 | `add_evidence_request_comment`, `update_evidence_request_comment`, `delete_evidence_request_comment` | Comment on an ER. Only the owner can edit or delete. |
+| `update_global_control` | Sets a control's owner (an email from `list_users`) and/or replaces its notes. The status cannot be set: it is derived from the control's tasks and monitors. |
+| `add_global_control_file` | Attaches a file under 1MB (base64) to a control. |
 
 ## Rules for agents
 
@@ -84,7 +88,7 @@ If the organization has more than one active audit, ask the user which one befor
 4. **Page through everything.** Lists return at most 100 items per page (`limit`, `offset`). Policy and attachment text is paginated by character `offset`; keep reading while `has_more` is true.
 5. **Report numbers exactly.** Do not estimate missing values; show empty owners or dates as "Not set".
 6. **Empty is not zero.** An empty `list_requirements` or `list_global_controls` usually means the audit is not set up yet, not that the customer is 0% ready.
-7. **Minimize personal data.** Names are enough; omit emails unless asked.
+7. **Minimize personal data.** Names are enough; omit emails unless asked or needed to set a control owner.
 
 ## Common errors
 
@@ -109,6 +113,7 @@ Claude users get these as skills; other agents can follow the same steps from `p
 | `policy-explainer` | What does our policy say about X? |
 | `policy-evidence-matcher` | Which policies close which ERs (attaches after approval) |
 | `monitor-investigation` | Which monitors fail and why |
+| `control-review` | Which controls need attention and who owns them; updates owners, notes and files after approval |
 
 ## Editing this plugin
 
