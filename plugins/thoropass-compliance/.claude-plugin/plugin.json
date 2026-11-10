@@ -1,6 +1,7 @@
 {
   "name": "thoropass-compliance",
-  "version": "0.2.0",
+  "displayName": "Thoropass",
+  "version": "0.2.1",
   "description": "Work with Thoropass audits, evidence requests, requirements, controls, policies, and monitors: explain where an audit stands, build a personal to-do list, show readiness by framework criteria, triage evidence, report audit status, answer policy questions, match policies to evidence requests, and investigate failing monitors.",
   "author": {
     "name": "Thoropass",
