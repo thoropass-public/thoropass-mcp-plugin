@@ -25,6 +25,7 @@ Produce a prioritized, actionable list of open Thoropass evidence requests (ERs)
    For audits with many ERs, fetch details only for the top ~25 by priority and summarize the rest by count.
 5. Prioritize using the rules in `references/prioritization.md`.
 6. Present a table with columns: ER (name/ID), Status, Owner, Due, Gap (what's missing), Suggested next step. Follow it with a short "Top 3 to do today" list.
+   When you name an audit, evidence request, policy, control or monitor, link its name to that item's own web_url only when the item carries a non-null web_url; never construct a Thoropass link yourself. In the table, the ER (name/ID) cell is linked to its web_url when present.
 7. Offer follow-up actions (draft a comment, find a matching policy, attach a file) but do not perform them unasked.
 
 ## Guardrails
