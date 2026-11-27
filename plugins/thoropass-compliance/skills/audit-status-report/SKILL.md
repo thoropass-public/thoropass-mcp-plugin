@@ -32,6 +32,8 @@ Write in plain prose with a small table, suitable for pasting into Slack or emai
 - **Next 2 weeks**: ERs due, with owners.
 - **Asks**: specific people or decisions needed.
 
+When you name an audit, evidence request, policy, control or monitor, link its name to that item's own web_url only when the item carries a non-null web_url; never construct a Thoropass link yourself.
+
 Keep it under ~300 words unless the user asks for more detail. Call the audit "at risk" only when there are overdue or rejected ERs, or failing urgent monitors; otherwise "on track".
 
 ## Guardrails

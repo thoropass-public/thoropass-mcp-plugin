@@ -30,6 +30,8 @@ Show audit readiness grouped by framework criteria (for example SOC 2 CC1–CC9,
 - **Focus areas**: for the least complete families, list the open requirements and their open evidence requests (display_id, name, status).
 - Offer to run evidence-request-triage on the open ERs in a family.
 
+When you name an audit, evidence request, policy, control or monitor, link its name to that item's own web_url only when the item carries a non-null web_url; never construct a Thoropass link yourself.
+
 ## Guardrails
 
 - Read-only skill: do not change requirements, ERs or controls.

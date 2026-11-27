@@ -19,6 +19,7 @@ Find open evidence requests that an existing published policy can satisfy, and a
 2. Call `list_evidence_requests` and keep open ERs whose requirements ask for a policy, procedure, plan or standard document (e.g., "Provide the Information Security Policy", "Incident response plan").
 3. Call `list_policies` to get published policies. For ambiguous matches, call `get_policy_content` to confirm the policy actually covers the requirement (check scope, review/approval date, and key required sections).
 4. Build a proposed match table: ER, Requirement (short), Proposed policy, Confidence (High/Medium/Low), Reason. Flag policies whose last review/approval looks older than 12 months, since auditors often reject stale policies.
+   When you name an audit, evidence request, policy, control or monitor, link its name to that item's own web_url only when the item carries a non-null web_url; never construct a Thoropass link yourself. In the table, the ER and Proposed policy cells are linked to their web_url when present.
 5. List ERs with no suitable policy as gaps, with a one-line note on what document is needed.
 6. Ask the user which matches to apply. Only after explicit approval, call `attach_policy_to_evidence_request` for each approved pair, then confirm what was attached.
 7. Do not submit ERs. If the user also wants them submitted, confirm each ER individually before calling `submit_evidence_request`.

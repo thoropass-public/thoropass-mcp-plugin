@@ -38,6 +38,8 @@ Build a personal to-do list for the signed-in user: the evidence requests (ERs) 
 - **Top 3 for today**.
 - If nothing is assigned, say so and offer to show unassigned open ERs (`unassigned_open_count` in `get_audit_progress`).
 
+When you name an audit, evidence request, policy, control or monitor, link its name to that item's own web_url only when the item carries a non-null web_url; never construct a Thoropass link yourself. In the table, the ER (display_id and name) cell is linked to its web_url when present.
+
 ## Guardrails
 
 - Read-only by default. Offer follow-ups (draft a comment reply, find a matching policy) but never post comments, attach files or submit ERs without explicit confirmation for that specific ER.

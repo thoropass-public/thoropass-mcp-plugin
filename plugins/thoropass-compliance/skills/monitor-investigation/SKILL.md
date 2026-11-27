@@ -26,6 +26,8 @@ Find failing Thoropass monitors, explain why they fail, and suggest fixes.
    - A table: Monitor, Urgency, Failing resources (count + examples), Since, Likely cause, Suggested fix.
    - Integration problems, if any, as a separate short section.
 
+   When you name an audit, evidence request, policy, control or monitor, link its name to that item's own web_url only when the item carries a non-null web_url; never construct a Thoropass link yourself. In the table, the Monitor cell is linked to its web_url when present.
+
 ## Guardrails
 
 - Read-only skill. Suggest remediation steps; do not change anything in Thoropass or connected systems.

@@ -32,6 +32,8 @@ Answer questions about the organization's policies in plain language, quoting th
 - **Source**: policy name and quoted text.
 - **Gaps** (only if any): what the policy does not cover.
 
+When you name an audit, evidence request, policy, control or monitor, link its name to that item's own web_url only when the item carries a non-null web_url; never construct a Thoropass link yourself.
+
 ## Guardrails
 
 - Read-only skill: never attach, edit or publish policies.

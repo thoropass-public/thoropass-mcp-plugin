@@ -48,6 +48,8 @@ Explain, in plain language, where a Thoropass audit is in its lifecycle, what th
 - **What you need to do now**: up to 3 concrete actions, taken from `returned_by_auditor`, `awaiting_customer_reply`, `overdue` and `due_soon`, in that order.
 - **Glossary** (only if the user seems new): ER, auditor, fieldwork, audit window.
 
+When you name an audit, evidence request, policy, control or monitor, link its name to that item's own web_url only when the item carries a non-null web_url; never construct a Thoropass link yourself.
+
 Keep it under ~300 words unless the user asks for more.
 
 ## Guardrails
